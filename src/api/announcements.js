@@ -2,7 +2,7 @@ import request from '../utils/request';
 import {
     useTokenStore
 } from '@/stores/token.js';
-
+//yeyeye
 export function addannounce(anodata){
     const tokenStore = useTokenStore();
     return request.post('/announcements/add',anodata,
