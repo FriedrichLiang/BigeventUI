@@ -95,6 +95,21 @@ const openedSubMenu2 = ref(false);
           </el-icon>
           <span>运营商管理</span>
         </el-menu-item>
+
+          <el-menu-item index="/charge/charge" v-if="( UserInfoStore.info.status=== '创作者')">
+          <el-icon>
+            <Management />
+          </el-icon>
+          <span>充电桩管理</span>
+        </el-menu-item>
+
+
+           <el-menu-item index="/charge/client" v-if="( UserInfoStore.info.status=== '普通用户')">
+          <el-icon>
+            <Management />
+          </el-icon>
+          <span>我要充电</span>
+        </el-menu-item>
         
 
 

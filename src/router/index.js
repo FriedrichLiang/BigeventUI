@@ -24,6 +24,8 @@
     import SuperAdminano from '@/views/admin/SuperAdminano.vue'
 import OperatorManage from '@/views/operator/AdminOperator.vue'
 import AdminOperator from '@/views/operator/AdminOperator.vue'
+import AdminCharge from '@/charge/AdminCharge.vue'
+import ChargeView from '@/client/ChargeView.vue'
 
     const routes=[
         {path:'/login',component:login},
@@ -51,6 +53,8 @@ import AdminOperator from '@/views/operator/AdminOperator.vue'
                 {path:'/admin/adminano',component:Adminano},
                 {path:'/admin/superadminano',component:SuperAdminano},
                 {path:'/charge/operator',component:AdminOperator},
+                {path:'/charge/charge',component:AdminCharge},
+                {path:'/charge/client',component:ChargeView},
             ]
         }
     ]

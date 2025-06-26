@@ -50,11 +50,11 @@ const rules = {
         { required: true, message: '请输入分类别名', trigger: 'blur' },
     ]
 }
-import {addCategory} from '@/api/article.js'
 import { ElMessage } from "element-plus";
+import {addOperator} from '@/api/newfunction.js'
 const title=ref('');
 async function add (){
-  let result= await addCategory(categoryModel.value);
+  let result= await addOperator(categoryModel.value);
   show();
   dialogVisible.value=false;
   ElMessage.success('添加成功');
@@ -62,16 +62,16 @@ async function add (){
 
 function showDialog(row){
   dialogVisible.value=true;
-  title.value='编辑分类'
-  categoryModel.value.categoryName=row.categoryName;
-  categoryModel.value.categoryAlias=row.categoryAlias;
+  title.value='编辑运营商'
+  categoryModel.value.categoryName=row.operatorName;
+  // categoryModel.value.categoryAlias=row.categoryAlias;
   categoryModel.value.id=row.id;
 }
 
-import { updateCategory } from "@/api/article.js";
+import { updateOperator } from "@/api/newfunction.js";
 async function update(){
   console.log(categoryModel)
-  let result=await updateCategory(categoryModel.value);
+  let result=await updateOperator(categoryModel.value);
   show();
   dialogVisible.value=false;
   ElMessage.success('编辑成功');
@@ -82,7 +82,7 @@ function clear(){
 }
 
 import { ElMessageBox } from "element-plus";
-import {deleteCategory} from '@/api/article.js'
+import {deleteOperator} from '@/api/newfunction.js'
 async function deletes(row){
   ElMessageBox.confirm(
     '您确定要删除吗?此类别的文章也将会删除！',
@@ -94,7 +94,7 @@ async function deletes(row){
     }
   )
     .then(async() => {
-      let result=await deleteCategory(row.id);
+      let result=await deleteOperator(row.id);
       show();
       ElMessage({
         type: 'success',
@@ -144,27 +144,27 @@ async function deletes(row){
         label-width="100px"
         style="padding-right: 30px"
       >
-        <el-form-item label="分类名称" prop="categoryName">
+        <el-form-item label="运营商名称" prop="operatorName">
           <el-input
-            v-model="categoryModel.categoryName"
-            :model="categoryModel.categoryName"
+            v-model="categoryModel.operatorName"
+            :model="categoryModel.operatorName"
             minlength="1"
             maxlength="10"
           ></el-input>
         </el-form-item>
-        <el-form-item label="分类别名" prop="categoryAlias">
+        <!-- <el-form-item label="分类别名" prop="categoryAlias">
           <el-input
             v-model="categoryModel.categoryAlias"
             :model="categoryModel.categoryAlias"
             minlength="1"
             maxlength="15"
           ></el-input>
-        </el-form-item>
+        </el-form-item> -->
       </el-form>
       <template #footer>
         <span class="dialog-footer">
           <el-button @click="dialogVisible = false">取消</el-button>
-          <el-button type="primary" @click="title=='添加分类'? add():update()"> 确认 </el-button>
+          <el-button type="primary" @click="title=='添加分类'?add():update()"> 确认 </el-button>
         </span>
       </template>
     </el-dialog>
