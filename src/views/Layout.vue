@@ -200,6 +200,16 @@ const openedSubMenu2 = ref(false);
             </el-icon>
             <span>创作总览</span>
           </el-menu-item>
+
+
+          <el-menu-item index="/charge/statusstatistic" >
+            <el-icon>
+              <Promotion />
+            </el-icon>
+            <span>充电桩状态总览</span>
+          </el-menu-item>
+
+          
           <el-menu-item index="/article/hotstatistic">
             <el-icon>
               <Crop />

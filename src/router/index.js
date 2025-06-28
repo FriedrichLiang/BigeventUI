@@ -26,6 +26,7 @@ import OperatorManage from '@/views/operator/AdminOperator.vue'
 import AdminOperator from '@/views/operator/AdminOperator.vue'
 import AdminCharge from '@/charge/AdminCharge.vue'
 import ChargeView from '@/client/ChargeView.vue'
+import Chargestatus from '@/views/statistic/Chargestatus.vue'
 
     const routes=[
         {path:'/login',component:login},
@@ -55,6 +56,8 @@ import ChargeView from '@/client/ChargeView.vue'
                 {path:'/charge/operator',component:AdminOperator},
                 {path:'/charge/charge',component:AdminCharge},
                 {path:'/charge/client',component:ChargeView},
+                {path:'/charge/statusstatistic',component:Chargestatus},
+                
             ]
         }
     ]

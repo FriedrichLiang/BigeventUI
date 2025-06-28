@@ -227,7 +227,7 @@ async function deletes(row){
       <el-form-item label="状态：">
         <el-select placeholder="请选择" v-model="status" style="width: 240px">
           <el-option label="空闲" value="空闲"></el-option>
-          <el-option label="工作中" value="工作中"></el-option>
+          <el-option label="使用中" value="中"></el-option>
           <el-option label="故障" value="故障"></el-option>
         </el-select>
       </el-form-item>

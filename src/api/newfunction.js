@@ -94,3 +94,14 @@ export function deleteCharge(id){
         }
     );
 }
+
+export function justgetall(){
+    const tokenStore = useTokenStore();
+    return request.get('/charge/getall',
+        {
+            headers: {
+                'Authorization': tokenStore.token
+            }
+        }
+    );
+}
